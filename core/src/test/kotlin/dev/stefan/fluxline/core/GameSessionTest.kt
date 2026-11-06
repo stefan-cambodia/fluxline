@@ -30,6 +30,20 @@ class GameSessionTest {
     }
 
     @Test
+    fun `le compte a rebours suspendu n'empeche ni de poser ni de tourner`() {
+        val s = GameSession(spec(".....", ">....", ".....", target = 3, rotation = true))
+        s.holdCountdown = true
+        s.run(10f)
+        assertEquals(Phase.COUNTDOWN, s.phase)
+        assertEquals(2f, s.countdownLeft, 1e-4f)
+        assertTrue(s.rotateNext())
+        assertTrue(s.place(1, 1))
+        s.holdCountdown = false
+        s.run(2.1f)
+        assertEquals(Phase.FLOWING, s.phase)
+    }
+
+    @Test
     fun `le fluide suit une ligne droite puis fuit dans la case vide`() {
         val s = GameSession(line())
         for (x in 1..3) s.force(x, 1, Piece.STRAIGHT_H)

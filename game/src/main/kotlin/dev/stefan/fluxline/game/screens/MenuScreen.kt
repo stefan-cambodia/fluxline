@@ -68,12 +68,16 @@ class MenuScreen(game: FluxGame) : Screen(game) {
         saved?.let { s ->
             add(Button(tr["menu.continue"], "play", ButtonStyle.PRIMARY, subtitle = describe(s)) { resume(s) })
         }
-        val best = save.stats.bestClassicScore
-        add(Button(tr["menu.classic"], null, if (saved == null) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, subtitle = if (best > 0) tr.format("menu.record", "score" to tr.number(best)) else tr["menu.classic.sub"]) {
-            start(Run(GameMode.CLASSIC, seed = TimeUtils.millis()))
-        })
-        add(Button(tr["menu.campaign"], null, ButtonStyle.SECONDARY, subtitle = tr.format("menu.campaign.sub", "stars" to save.totalStars, "total" to Campaign.size * 3)) {
+        // Le bouton mis en avant : la partie en cours, sinon la campagne tant qu'elle n'est pas
+        // terminée (ses premiers niveaux enseignent les règles), sinon le Classique.
+        val campaignDone = save.stars(Campaign.size) > 0
+        fun style(highlight: Boolean) = if (highlight) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY
+        add(Button(tr["menu.campaign"], null, style(saved == null && !campaignDone), subtitle = tr.format("menu.campaign.sub", "stars" to save.totalStars, "total" to Campaign.size * 3)) {
             game.setScreen(LevelSelectScreen(game))
+        })
+        val best = save.stats.bestClassicScore
+        add(Button(tr["menu.classic"], null, style(saved == null && campaignDone), subtitle = if (best > 0) tr.format("menu.record", "score" to tr.number(best)) else tr["menu.classic.sub"]) {
+            start(Run(GameMode.CLASSIC, seed = TimeUtils.millis()))
         })
         val arcade = save.stats.bestArcadeScore
         add(Button(tr["menu.arcade"], null, ButtonStyle.SECONDARY, subtitle = if (arcade > 0) tr.format("menu.record", "score" to tr.number(arcade)) else tr["menu.arcade.sub"]) {

@@ -52,6 +52,10 @@ class SaveData(private val prefs: Preferences = Gdx.app.getPreferences(PREFS_NAM
     private val stars = IntArray(Campaign.size + 1)
     private val bestScores = HashMap<String, Int>()
 
+    /** Le tutoriel du niveau 1 a été suivi (ou passé). */
+    var tutorialDone = false
+        private set
+
     init {
         load()
     }
@@ -68,6 +72,7 @@ class SaveData(private val prefs: Preferences = Gdx.app.getPreferences(PREFS_NAM
             settings.nextCellHint = prefs.getBoolean("set.hint", settings.nextCellHint)
             settings.language = prefs.getString("set.lang", settings.language)
             for (i in 1..Campaign.size) stars[i] = prefs.getInteger("stars.$i", 0).coerceIn(0, 3)
+            tutorialDone = prefs.getBoolean("tut.done", false)
             stats.roundsPlayed = prefs.getInteger("st.rounds", 0)
             stats.roundsWon = prefs.getInteger("st.won", 0)
             stats.pipesFilled = prefs.getLong("st.pipes", 0)
@@ -117,6 +122,13 @@ class SaveData(private val prefs: Preferences = Gdx.app.getPreferences(PREFS_NAM
             prefs.putInteger("stars.$level", result.stars)
         }
         recordBest("level-$level", result.score)
+        prefs.flush()
+    }
+
+    fun markTutorialDone() {
+        if (tutorialDone) return
+        tutorialDone = true
+        prefs.putBoolean("tut.done", true)
         prefs.flush()
     }
 
@@ -210,6 +222,8 @@ class SaveData(private val prefs: Preferences = Gdx.app.getPreferences(PREFS_NAM
         }
         for (key in bestScores.keys) prefs.remove("best.$key")
         bestScores.clear()
+        tutorialDone = false
+        prefs.remove("tut.done")
         val fresh = Stats()
         stats.roundsPlayed = fresh.roundsPlayed
         stats.roundsWon = 0

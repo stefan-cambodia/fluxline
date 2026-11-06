@@ -1,0 +1,25 @@
+FLUXLINE is an original pipe puzzle game in the tradition of the late-1980s arcade puzzlers.
+
+An educational puzzle game for the whole family: it exercises logic, planning ahead and spatial reasoning.
+
+The dispenser hands you the pieces one at a time: place them to build a network before the plasma surges out of the source. Every pipe it flows through scores points; one leak and the round is over.
+
+FOUR MODES
+• Campaign: 20 hand-made levels, each built around one idea (crossovers, reservoirs, one-way pipes, a drain to reach…), with stars to earn. A tutorial guides your first steps.
+• Classic: the original rules, no rotation. How far can you go?
+• Arcade: fast pace, rotate the next piece, three lives.
+• Daily challenge: a new board and a new goal every day.
+
+BUILT FOR TOUCH
+• Tap a tile to place the piece, or drag it from the dispenser.
+• Preview before you let go, generous touch areas, one-handed play.
+• Subtle vibration feedback, can be turned off.
+
+PLASMA THAT FEELS ALIVE
+Ceramic and brass pipes, glowing plasma that follows every bend, particles and bloom, up to 120 frames per second on supported screens.
+
+RESPECTFUL
+• No ads, no in-app purchases.
+• No data collected, no Internet connection needed.
+• Your game is saved automatically.
+• In English, French, Russian, Chinese and Khmer.

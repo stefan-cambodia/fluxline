@@ -70,6 +70,12 @@ class GameSession(val spec: LevelSpec) {
     var result: RoundResult? = null
         private set
 
+    /**
+     * Compte à rebours suspendu (tutoriel : le joueur apprend sans être pressé).
+     * Le reste de la simulation continue ; ce réglage d'interface n'est pas sauvegardé.
+     */
+    var holdCountdown: Boolean = false
+
     // Tête du fluide : le conduit en cours de remplissage.
     var headX: Int = 0
         private set
@@ -175,6 +181,7 @@ class GameSession(val spec: LevelSpec) {
         if (cooldown > 0f) cooldown = max(0f, cooldown - dt)
         when (phase) {
             Phase.COUNTDOWN -> {
+                if (holdCountdown) return
                 countdownLeft -= dt
                 val whole = kotlin.math.ceil(countdownLeft.toDouble()).toInt()
                 if (whole in 1..COUNTDOWN_TICKS && whole < lastTick) {

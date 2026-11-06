@@ -23,6 +23,7 @@ python3 tools/gen_ui.py         # atlas de l'interface (logo, boutons, icônes)
 python3 tools/gen_icon.py       # icônes Android
 python3 tools/gen_audio.py      # bruitages et musiques (OGG, via ffmpeg)
 python3 tools/gen_fonts.py      # polices russe, chinoise, khmère (fontTools, uharfbuzz)
+python3 tools/gen_store.py      # image de présentation Google Play, icône de la fiche
 ```
 
 Polices : Chakra Petch et Orbitron (logo) ; Exo 2 (cyrillique), Noto Sans SC (chinois) et Noto Sans Khmer, fusionnées par `tools/gen_fonts.py`. Toutes SIL OFL 1.1. Moteur : libGDX (Apache 2.0).
@@ -46,3 +47,5 @@ Sans `keystore.properties` (voir `storeFile`, `storePassword`, `keyAlias`,
 sont signés avec la clé de debug : installables pour tester, pas publiables.
 
 Documentation technique et état des fonctionnalités : [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+Publication sur Google Play (fiche en 5 langues, déclarations) : [docs/PLAY-STORE.md](docs/PLAY-STORE.md).
+Politique de confidentialité : [docs/privacy-policy.md](docs/privacy-policy.md).

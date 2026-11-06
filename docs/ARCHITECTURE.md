@@ -76,6 +76,14 @@ l'audio et aux vibrations.
 - Toucher le plateau montre l'aperçu et les lignes de visée ; relâcher pose.
   Sortir du plateau annule. Glisser depuis la prochaine pièce fonctionne aussi.
 - « Accélérer » se maintient 0,4 s (action irréversible).
+- Tutoriel (`Tutorial`) au premier lancement du niveau 1 : une main animée et
+  une consigne montrent où poser, comment tourner la pièce, puis quand maintenir
+  « Lancer ». Le compte à rebours est suspendu tant qu'aucune pièce n'est
+  raccordée à la source (`GameSession.holdCountdown`). Chaque étape se déduit du
+  plateau, donc une partie reprise retrouve la bonne ; une croix permet de le
+  passer. Il ne revient plus ensuite (sauf réinitialisation de la progression).
+- Menu principal : la Campagne est en tête et mise en avant tant qu'elle n'est
+  pas terminée (ses premiers niveaux enseignent les règles), puis le Classique.
 - Menu principal : l'icône « quitter » demande un second toucher dans les 3 s
   (un effleurement ne ferme pas le jeu) ; la touche retour quitte directement.
 - Une pose refusée pendant le blocage d'un remplacement est rejouée automatiquement.
@@ -118,7 +126,7 @@ l'audio et aux vibrations.
 
 | Module | Couverture |
 |---|---|
-| `core` (51 tests) | ports, rotation, connexions, écoulement par type de pièce, fuites (bord, vide, pièce incompatible, bloc, conduit plein), croix, réservoir, sens unique, arrivée, remplacement et blocage, accélération, score, étoiles, distributeur, sauvegarde (reprise identique, fichiers abîmés), génération, faisabilité des 20 niveaux, équilibrage, équilibrage par joueurs humains simulés (campagne, premières manches Classique et Arcade) |
+| `core` (52 tests) | ports, rotation, connexions, écoulement par type de pièce, fuites (bord, vide, pièce incompatible, bloc, conduit plein), croix, réservoir, sens unique, arrivée, remplacement et blocage, accélération, score, étoiles, distributeur, sauvegarde (reprise identique, fichiers abîmés), génération, faisabilité des 20 niveaux, équilibrage, équilibrage par joueurs humains simulés (campagne, premières manches Classique et Arcade) |
 | `game` (34 tests) | disposition sur 11 formats, correspondance pixel → case ; traductions : mêmes clés et paramètres que le français, formes plurielles, chaque caractère présent dans la police de sa langue, khmer pré-mis en forme à jour, chaque clé utilisée par le code existe, nombres |
 
 ## État des fonctionnalités

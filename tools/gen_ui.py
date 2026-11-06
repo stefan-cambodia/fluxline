@@ -352,6 +352,21 @@ def ic_power(d, s, big):
     d.rounded_rectangle(P(s, (43, 9), (53, 50)), radius=5 * s, fill=255)
 
 
+def ic_hand(d, s, big):
+    """Main qui pointe vers le haut : le bout de l'index (44, 6) est le point touché."""
+    d.rounded_rectangle(P(s, (36, 6), (52, 58)), radius=8 * s, fill=255)        # index
+    d.rounded_rectangle(P(s, (52, 34), (64, 60)), radius=6 * s, fill=255)       # majeur
+    d.rounded_rectangle(P(s, (64, 38), (76, 62)), radius=6 * s, fill=255)       # annulaire
+    d.rounded_rectangle(P(s, (30, 46), (78, 90)), radius=16 * s, fill=255)      # paume
+    d.line(P(s, (38, 74), (19, 50)), fill=255, width=int(15 * s))               # pouce
+    for x, y in ((38, 74), (19, 50)):
+        d.ellipse([(x - 7.5) * s, (y - 7.5) * s, (x + 7.5) * s, (y + 7.5) * s], fill=255)
+    # Fines séparations entre les doigts, pour la lisibilité.
+    for x, y0, y1 in ((52, 36, 54), (64, 40, 56)):
+        d.line(P(s, (x, y0), (x, y1)), fill=0, width=max(1, int(2.5 * s)))
+    d.line(P(s, (31, 62), (25, 55)), fill=0, width=max(1, int(2.5 * s)))
+
+
 ICONS = {
     "pause": ic_pause, "play": ic_play, "fast": ic_fast, "rotate": ic_rotate,
     "restart": ic_restart, "back": ic_back, "home": ic_home, "gear": ic_gear,
@@ -359,7 +374,7 @@ ICONS = {
     "check": ic_check, "close": ic_close, "trophy": ic_trophy, "chart": ic_chart,
     "star": ic_star, "star_outline": ic_star_outline, "info": ic_info,
     "levels": ic_levels, "heart": ic_heart, "drop": ic_drop, "calendar": ic_calendar,
-    "globe": ic_globe, "power": ic_power,
+    "globe": ic_globe, "power": ic_power, "hand": ic_hand,
 }
 
 

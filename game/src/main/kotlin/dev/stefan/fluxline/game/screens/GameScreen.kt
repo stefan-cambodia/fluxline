@@ -65,6 +65,10 @@ class GameScreen(
     private val overlay = WidgetGroup()
     private val pauseButton = Button(icon = "pause", style = ButtonStyle.ICON) { openPause() }
 
+    // Tutoriel du niveau 1 (premier lancement), et sa croix pour le passer.
+    private var tutorial: Tutorial? = null
+    private val tutorialClose = Button(icon = "close", style = ButtonStyle.ICON_FLAT) { endTutorial() }
+
     // Score affiché (il rattrape le vrai score en douceur).
     private var shownScore = 0f
     private var result: RoundResult? = null
@@ -121,6 +125,7 @@ class GameScreen(
         }
         renderer.reset(session)
         shownScore = (run.totalScore + session.score).toFloat()
+        tutorial = newTutorial()
     }
 
     private val spec get() = session.spec
@@ -140,6 +145,12 @@ class GameScreen(
         pauseButton.touchPad = 10f * u
         widgets.clear()
         widgets.add(pauseButton)
+        tutorial?.let {
+            it.invalidate()
+            tutorialClose.visible = false
+            tutorialClose.touchPad = 12f * u
+            widgets.add(tutorialClose)
+        }
         // Les textes en cache sont recalculés (la langue a pu changer dans les options).
         hudFor = null
         hudLivesFor = -1
@@ -161,6 +172,7 @@ class GameScreen(
         newRecord = false
         queueShift = 1f
         shownScore = run.totalScore.toFloat()
+        tutorial = newTutorial()
         layout()
         enterIntro()
     }
@@ -181,6 +193,7 @@ class GameScreen(
     private fun openPause() {
         if (state != State.PLAYING && state != State.INTRO) return
         cancelGesture()
+        tutorialClose.visible = false
         state = State.PAUSED
         stateTime = 0f
         game.audio.hum(0f)
@@ -248,6 +261,33 @@ class GameScreen(
         game.setScreen(MenuScreen(game))
     }
 
+    private fun newTutorial(): Tutorial? =
+        if (bot == null && run.mode == GameMode.LEVELS && run.level == 1 && !game.save.tutorialDone) Tutorial() else null
+
+    /** Fin du tutoriel : suivi jusqu'au bout, ou passé avec la croix. Il ne revient plus. */
+    private fun endTutorial() {
+        if (tutorial == null) return
+        tutorial = null
+        session.holdCountdown = false
+        game.save.markTutorialDone()
+        layout()
+    }
+
+    private fun updateTutorial(dt: Float) {
+        val t = tutorial ?: return
+        t.update(session, dt)
+        if (t.done) {
+            endTutorial()
+            return
+        }
+        session.holdCountdown = t.holdsCountdown
+        t.layoutCard(game.ui, layout, tr, u, width)
+        tutorialClose.visible = t.showsCard
+        val c = t.card
+        val s = 64f * u
+        tutorialClose.set(c.x + c.width - s - 10f * u, c.y + c.height - s - 8f * u, s, s)
+    }
+
     // --- Mise à jour ------------------------------------------------------------------
 
     override fun update(dt: Float) {
@@ -265,6 +305,7 @@ class GameScreen(
         when (state) {
             State.INTRO -> if (bot != null && stateTime > 1.2f) beginPlay()
             State.PLAYING -> {
+                updateTutorial(dt)
                 if (gesture == Gesture.FAST) {
                     fastHold += dt
                     if (fastHold >= FAST_HOLD) {
@@ -661,6 +702,7 @@ class GameScreen(
         batch.begin()
         game.backdrop.vignette(batch, width, height, 0.55f)
         drawHud(batch)
+        if (state == State.PLAYING) tutorial?.draw(game.ui, layout, u)
         widgets.draw(game.ui, 1f)
         drawBanner(batch)
         when (state) {

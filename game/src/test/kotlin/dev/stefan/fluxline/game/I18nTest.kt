@@ -96,7 +96,7 @@ class I18nTest {
     fun `chaque cle utilisee par le code existe`() {
         val fr = source(Language.FR)
         val src = File(System.getProperty("user.dir"), "src/main/kotlin")
-        val literal = Regex("\"((?:menu|mode|hud|banner|intro|pause|result|levels|options|stats|credits|lang)\\.[A-Za-z0-9.]+)\"")
+        val literal = Regex("\"((?:menu|mode|hud|banner|intro|tutorial|pause|result|levels|options|stats|credits|lang)\\.[A-Za-z0-9.]+)\"")
         val used = src.walkTopDown().filter { it.extension == "kt" }.flatMap { f -> literal.findAll(f.readText()).map { it.groupValues[1] } }.toSet()
         assertTrue(used.size > 80, "analyse du code : seulement ${used.size} clés trouvées")
         for (key in used) assertTrue(key in fr || "$key.other" in fr, "clé absente des traductions : $key")

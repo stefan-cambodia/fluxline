@@ -225,16 +225,23 @@ icon_power
   orig: 96, 96
   offset: 0, 0
   index: -1
-knob
+icon_hand
   rotate: false
   xy: 310, 368
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+knob
+  rotate: false
+  xy: 412, 368
   size: 72, 72
   orig: 72, 72
   offset: 0, 0
   index: -1
 pill
   rotate: false
-  xy: 388, 368
+  xy: 490, 368
   size: 128, 64
   split: 32, 32, 8, 8
   orig: 128, 64
@@ -242,7 +249,7 @@ pill
   index: -1
 bar_track
   rotate: false
-  xy: 522, 368
+  xy: 624, 368
   size: 64, 24
   split: 12, 12, 4, 4
   orig: 64, 24
@@ -250,7 +257,7 @@ bar_track
   index: -1
 bar_fill
   rotate: false
-  xy: 592, 368
+  xy: 694, 368
   size: 64, 24
   split: 12, 12, 4, 4
   orig: 64, 24
