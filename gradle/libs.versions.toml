@@ -1,0 +1,30 @@
+[versions]
+# AGP 9.x : support Kotlin intégré pour les modules Android (le plugin
+# org.jetbrains.kotlin.android ne doit PAS être appliqué). Exige compileSdk 37.
+agp = "9.3.2"
+# Version du compilateur Kotlin embarqué dans AGP 9.3.2 : les modules JVM
+# (:core, :game, :desktop) appliquent org.jetbrains.kotlin.jvm à cette version.
+kotlin = "2.2.10"
+# libGDX 1.14.2 : bibliothèques natives Android alignées sur des pages de 16 Ko
+# (vérifié avec readelf : p_align = 0x4000), exigence de Google Play.
+gdx = "1.14.2"
+androidx-core = "1.19.0"
+junit5 = "5.13.4"
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+gdx-core = { group = "com.badlogicgames.gdx", name = "gdx", version.ref = "gdx" }
+gdx-freetype = { group = "com.badlogicgames.gdx", name = "gdx-freetype", version.ref = "gdx" }
+gdx-backend-android = { group = "com.badlogicgames.gdx", name = "gdx-backend-android", version.ref = "gdx" }
+gdx-backend-lwjgl3 = { group = "com.badlogicgames.gdx", name = "gdx-backend-lwjgl3", version.ref = "gdx" }
+gdx-backend-headless = { group = "com.badlogicgames.gdx", name = "gdx-backend-headless", version.ref = "gdx" }
+gdx-platform = { group = "com.badlogicgames.gdx", name = "gdx-platform", version.ref = "gdx" }
+gdx-freetype-platform = { group = "com.badlogicgames.gdx", name = "gdx-freetype-platform", version.ref = "gdx" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit5" }
+junit-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit5" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

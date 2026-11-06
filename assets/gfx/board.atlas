@@ -1,0 +1,461 @@
+
+board.png
+size: 2048, 2048
+format: RGBA8888
+filter: MipMapLinearLinear, Linear
+repeat: none
+body_STRAIGHT_H
+  rotate: false
+  xy: 4, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_STRAIGHT_H
+  rotate: false
+  xy: 220, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_STRAIGHT_H
+  rotate: false
+  xy: 436, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_STRAIGHT_V
+  rotate: false
+  xy: 652, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_STRAIGHT_V
+  rotate: false
+  xy: 868, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_STRAIGHT_V
+  rotate: false
+  xy: 1084, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_ELBOW_NE
+  rotate: false
+  xy: 1300, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_ELBOW_NE
+  rotate: false
+  xy: 1516, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ELBOW_NE
+  rotate: false
+  xy: 1732, 4
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_ELBOW_ES
+  rotate: false
+  xy: 4, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_ELBOW_ES
+  rotate: false
+  xy: 220, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ELBOW_ES
+  rotate: false
+  xy: 436, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_ELBOW_SW
+  rotate: false
+  xy: 652, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_ELBOW_SW
+  rotate: false
+  xy: 868, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ELBOW_SW
+  rotate: false
+  xy: 1084, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_ELBOW_WN
+  rotate: false
+  xy: 1300, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_ELBOW_WN
+  rotate: false
+  xy: 1516, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ELBOW_WN
+  rotate: false
+  xy: 1732, 220
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_CROSS
+  rotate: false
+  xy: 4, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_CROSS_0
+  rotate: false
+  xy: 220, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_CROSS_1
+  rotate: false
+  xy: 436, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_CROSS
+  rotate: false
+  xy: 652, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_SOURCE_N
+  rotate: false
+  xy: 868, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_SOURCE_N
+  rotate: false
+  xy: 1084, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_SOURCE_N
+  rotate: false
+  xy: 1300, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_DRAIN_N
+  rotate: false
+  xy: 1516, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_DRAIN_N
+  rotate: false
+  xy: 1732, 436
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_DRAIN_N
+  rotate: false
+  xy: 4, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ONE_WAY_N
+  rotate: false
+  xy: 220, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_SOURCE_E
+  rotate: false
+  xy: 436, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_SOURCE_E
+  rotate: false
+  xy: 652, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_SOURCE_E
+  rotate: false
+  xy: 868, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_DRAIN_E
+  rotate: false
+  xy: 1084, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_DRAIN_E
+  rotate: false
+  xy: 1300, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_DRAIN_E
+  rotate: false
+  xy: 1516, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ONE_WAY_E
+  rotate: false
+  xy: 1732, 652
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_SOURCE_S
+  rotate: false
+  xy: 4, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_SOURCE_S
+  rotate: false
+  xy: 220, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_SOURCE_S
+  rotate: false
+  xy: 436, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_DRAIN_S
+  rotate: false
+  xy: 652, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_DRAIN_S
+  rotate: false
+  xy: 868, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_DRAIN_S
+  rotate: false
+  xy: 1084, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ONE_WAY_S
+  rotate: false
+  xy: 1300, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_SOURCE_W
+  rotate: false
+  xy: 1516, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_SOURCE_W
+  rotate: false
+  xy: 1732, 868
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_SOURCE_W
+  rotate: false
+  xy: 4, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_DRAIN_W
+  rotate: false
+  xy: 220, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_DRAIN_W
+  rotate: false
+  xy: 436, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_DRAIN_W
+  rotate: false
+  xy: 652, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_ONE_WAY_W
+  rotate: false
+  xy: 868, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_RESERVOIR_H
+  rotate: false
+  xy: 1084, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_RESERVOIR_H
+  rotate: false
+  xy: 1300, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_RESERVOIR_H
+  rotate: false
+  xy: 1516, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_RESERVOIR_V
+  rotate: false
+  xy: 1732, 1084
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+flow_RESERVOIR_V
+  rotate: false
+  xy: 4, 1300
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glass_RESERVOIR_V
+  rotate: false
+  xy: 220, 1300
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+body_BLOCK
+  rotate: false
+  xy: 436, 1300
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+socket
+  rotate: false
+  xy: 652, 1300
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+fixed_mark
+  rotate: false
+  xy: 868, 1300
+  size: 208, 208
+  orig: 208, 208
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 4, 1516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spark
+  rotate: false
+  xy: 140, 1516
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+dot
+  rotate: false
+  xy: 212, 1516
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 268, 1516
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+droplet
+  rotate: false
+  xy: 404, 1516
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 444, 1516
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
